@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<profile>
+    <owner type = "STUDENT" age = "20">
+        <Name>
+            <FirstName>Random</FirstName>
+            <MiddleName init = "P">Stochastic</MiddleName>
+            <LastName>Citizen</LastName>            
+        </Name>
+        <Phone>
+            <Home>(555)157-5789</Home>
+            <Work>(555)326-3644</Work>
+            <Fax/>
+            <Pager/>
+            <Cell/>
+        </Phone>
+        <Address type = "HOUSE">
+            <StreetAddr>555 Bailey Avenue</StreetAddr>
+            <City>San Jose</City>
+            <State>Ca</State>
+            <ZipCode>95141</ZipCode>
+        </Address>
+        <Email>
+            <ul>
+                <li>sinn@us.ibm.com</li>
+                <li>sinn@mathcs.sjsu.edu</li>
+                <li>webmaster@openloop.com</li>
+            </ul>
+        </Email>
+        <Education>
+            <Institution>
+                <GraduationDate>1998</GraduationDate>
+                <schoolName>University of Minnesota-Twin Cities</schoolName>
+                <degree type = "MS" major = "CS" gpa = "3.97"/>
+            </Institution>
+            <Institution>
+                <GraduationDate>1994</GraduationDate>
+                <schoolName>University of Wisconsin-Madison</schoolName>
+                <degree type = "BS" major = "CS" gpa = "3.90"/>
+            </Institution>
+        </Education>
+        <techSkills>
+            <Languages>Java</Languages>
+            <Languages>C++</Languages>
+            <Languages>C</Languages>
+            <Languages>JavaScript</Languages>
+            <Languages>XML</Languages>
+            <Languages>HTML</Languages>
+            <Languages>SQL</Languages>
+            <System>Windows</System>
+        </techSkills>
+    </owner>
+</profile>

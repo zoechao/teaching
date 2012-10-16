@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <xs:element name="catalog">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="category"/>
+        <xs:element ref="cataloging_info"/>
+        <xs:element ref="last_updated"/>
+        <xs:element ref="copyright"/>
+        <xs:element ref="maintainer"/>
+        <xs:element maxOccurs="unbounded" ref="composer"/>
+        <xs:element maxOccurs="unbounded" ref="composition"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="category" type="xs:string"/>
+  <xs:element name="cataloging_info">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="abstract"/>
+        <xs:element maxOccurs="unbounded" ref="keyword"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="abstract" type="xs:string"/>
+  <xs:element name="keyword" type="xs:string"/>
+  <xs:element name="last_updated" type="xs:string"/>
+  <xs:element name="copyright" type="xs:string"/>
+  <xs:element name="maintainer">
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="name">
+          <xs:attribute name="email" use="required"/>
+          <xs:attribute name="url" use="required" type="xs:anyURI"/>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="composer">
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="name">
+          <xs:attribute name="id" use="required" type="xs:NCName"/>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="composition">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="title"/>
+        <xs:element ref="date"/>
+        <xs:element minOccurs="0" ref="length"/>
+        <xs:element ref="instruments"/>
+        <xs:element minOccurs="0" ref="description"/>
+        <xs:element minOccurs="0" ref="publisher"/>
+      </xs:sequence>
+      <xs:attribute name="composer" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="title" type="xs:string"/>
+  <xs:element name="date">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="year"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="year" type="xs:integer"/>
+  <xs:element name="length" type="xs:string"/>
+  <xs:element name="instruments" type="xs:string"/>
+  <xs:element name="description">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="p"/>
+        <xs:element minOccurs="0" ref="ul"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="p">
+    <xs:complexType mixed="true">
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="cite"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="cite">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="a"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="a">
+    <xs:complexType mixed="true">
+      <xs:attribute name="href" use="required" type="xs:anyURI"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ul">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="li"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="li" type="xs:string"/>
+  <xs:element name="publisher" type="xs:string"/>
+  <xs:complexType name="name">
+    <xs:sequence>
+      <xs:element ref="name"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="name">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="first_name"/>
+        <xs:element ref="middle_name"/>
+        <xs:element ref="last_name"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="first_name" type="xs:NCName"/>
+  <xs:element name="middle_name" type="xs:string"/>
+  <xs:element name="last_name" type="xs:NCName"/>
+</xs:schema>
