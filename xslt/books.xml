@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<bookstore>
+<bookstore storename="Books Without Borders">
     <book category="cooking">
         <title lang="en">Everyday Italian</title>
         <author>Giada De Laurentiis</author>
